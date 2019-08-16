@@ -2,7 +2,7 @@
  <div>
      <h1>Shopping Cart</h1>
      <ul>
-         <li v-for="product in products">
+         <li v-for="product in products" :key="product.id">
              {{product.title}} - {{product.price | currency}} - {{product.quantity}}
          </li>
      </ul>

@@ -1,19 +1,29 @@
 <template>
   <div id="app">
-    <ProductsList/>
-    <hr>
-    <ShoppingCart/>
+    <v-app>
+      <v-content>
+        <v-container>
+            <ProductsList/>
+            <hr>
+            <AddScan/>
+            <hr>
+            <ShoppingCart/>
+        </v-container>
+      </v-content>
+    </v-app>
   </div>
 </template>
 
 <script>
 import ProductsList from './components/ProductsList'
 import ShoppingCart from './components/ShoppingCart'
+import AddScan from './components/AddScan'
 export default {
   name: 'app',
   components: {
     ProductsList,
-    ShoppingCart
+    ShoppingCart,
+    AddScan
   }
 }
 </script>

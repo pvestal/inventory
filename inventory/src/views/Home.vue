@@ -1,7 +1,9 @@
 <template>
-  <ProductsList />
-  <hr>
-  <ShoppingCart />
+    <div>
+        <ProductsList />
+        <hr>
+        <ShoppingCart />
+    </div>
 </template>
 
 <script>

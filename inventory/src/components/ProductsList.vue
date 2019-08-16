@@ -3,7 +3,7 @@
         <h1>Product List</h1>
         <img v-if="loading" src="https://i.imgur.com/JfPpwOA.gif">
         <ul v-else>
-            <li v-for="product in products">
+            <li v-for="product in products" :key="product.id">
                 {{product.title}} - {{product.price | currency}} - {{product.inventory}}
                 <v-btn :disabled="!productIsInStock(product)" @click.prevent="addProductToCart(product)">Add</v-btn>
             </li>
@@ -28,7 +28,7 @@ import {mapState, mapGetters} from 'vuex'
             ...mapState({
                 products: state => state.products
             }),
-            
+
             // products() {
             //     return this.$store.state.products
             // },
@@ -55,7 +55,7 @@ import {mapState, mapGetters} from 'vuex'
           storeProduct () {
             firebase.database().ref('products')
             .push({
-              created: format(Date.now(), 'DD/MM/YY HH:mm:ss'), 
+              created: format(Date.now(), 'DD/MM/YY HH:mm:ss'),
               content: this.content})
             this.content = ''
           },
